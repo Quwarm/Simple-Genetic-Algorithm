@@ -34,7 +34,7 @@ int main() {
     const double EPS = 1e-5;
     int numberOfPopulationMembers = 7500;
     int iterations = 1000;
-    double percentOfBestOnesToLive = 0.8;
+    double percentOfBestOnesToLive = 0.7;
     std::pair<double, double> searchingSection = {-1, 4};
     GeneticAlgorithm<double>
         GA_A(numberOfPopulationMembers, percentOfBestOnesToLive, searchingSection, AckleyFunction, EPS);
