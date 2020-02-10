@@ -32,7 +32,7 @@ double ShafferN2Function(double x, double y) {
 int main() {
     std::cout << std::setprecision(10);
     const double EPS = 1e-5;
-    int numberOfPopulationMembers = 5000;
+    int numberOfPopulationMembers = 7500;
     int iterations = 1000;
     double percentOfBestOnesToLive = 0.8;
     std::pair<double, double> searchingSection = {-1, 4};

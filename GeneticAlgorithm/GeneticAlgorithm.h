@@ -61,7 +61,7 @@ class GeneticAlgorithm {
     void mutate() {
         auto minimal_population_x = *std::min(population_x_.begin(), population_x_.end());
         auto minimal_population_y = *std::min(population_y_.begin(), population_y_.end());
-        std::normal_distribution<> normal_dist {0, std::min(probability_ * 1000, 0.001)};
+        std::normal_distribution<> normal_dist {0, std::min(probability_, 0.001)};
         for (auto &elem : population_x_) {
             elem += minimal_population_x * normal_dist(random_gen_);
         }
