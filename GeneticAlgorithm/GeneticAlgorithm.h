@@ -18,7 +18,8 @@ class GeneticAlgorithm {
           percent_of_best_ones_to_live_(percent_of_best_ones_to_live),
           section_(std::move(section)),
           function_(std::move(function)),
-          probability_(probability) {
+          probability_(probability)
+    {
         std::random_device rd;
         random_gen_.seed(rd());
     }
