@@ -43,9 +43,11 @@ int main() {
         auto minimumValue = GA_A.searchMinimum(iterations);
         auto minimumPoint = GA_A.getArgumentsOfMinimumValue();
         std::cout << "Found Minimum: f(" << minimumPoint.first << ", " << minimumPoint.second << ") = "
-             << minimumValue << std::endl;
-        std::cout << "Expected: f(0, 0) = 0" << std::endl << std::endl;
-        
+                  << minimumValue << std::endl;
+        std::cout << "Expected: f(0, 0) = 0" << std::endl;
+        std::cout << "Max error: "
+                  << std::max(fabs(minimumValue), std::max(fabs(minimumPoint.first), fabs(minimumPoint.second)))
+                  << std::endl << std::endl;
     }
     GeneticAlgorithm<double>
         GA_B(numberOfPopulationMembers, percentOfBestOnesToLive, searchingSection, BealFunction, EPS);
@@ -54,8 +56,11 @@ int main() {
         auto minimumValue = GA_B.searchMinimum(iterations);
         auto minimumPoint = GA_B.getArgumentsOfMinimumValue();
         std::cout << "Found Minimum: f(" << minimumPoint.first << ", " << minimumPoint.second << ") = "
-             << minimumValue << std::endl;
-        std::cout << "Expected: f(3, 0.5) = 0" << std::endl << std::endl;
+                  << minimumValue << std::endl;
+        std::cout << "Expected: f(3, 0.5) = 0" << std::endl;
+        std::cout << "Max error: " << std::max(fabs(minimumValue),
+                                               std::max(fabs(3 - minimumPoint.first), fabs(0.5 - minimumPoint.second)))
+                  << std::endl << std::endl;
     }
     GeneticAlgorithm<double>
         GA_I(numberOfPopulationMembers, percentOfBestOnesToLive, searchingSection, IzomFunction, EPS);
@@ -64,8 +69,11 @@ int main() {
         auto minimumValue = GA_I.searchMinimum(iterations);
         auto minimumPoint = GA_I.getArgumentsOfMinimumValue();
         std::cout << "Found Minimum: f(" << minimumPoint.first << ", " << minimumPoint.second << ") = "
-             << minimumValue << std::endl;
-        std::cout << "Expected: f(" << M_PI << ", " << M_PI << ") = -1" << std::endl << std::endl;
+                  << minimumValue << std::endl;
+        std::cout << "Expected: f(" << M_PI << ", " << M_PI << ") = -1" << std::endl;
+        std::cout << "Max error: " << std::max(fabs(-1 - minimumValue),
+                                               std::max(fabs(M_PI - minimumPoint.first),
+                                                        fabs(M_PI - minimumPoint.second))) << std::endl << std::endl;
     }
     GeneticAlgorithm<double>
         GA_R(numberOfPopulationMembers, percentOfBestOnesToLive, searchingSection, RosenbrokFunction, EPS);
@@ -74,8 +82,11 @@ int main() {
         auto minimumValue = GA_R.searchMinimum(iterations);
         auto minimumPoint = GA_R.getArgumentsOfMinimumValue();
         std::cout << "Found Minimum: f(" << minimumPoint.first << ", " << minimumPoint.second << ") = "
-             << minimumValue << std::endl;
-        std::cout << "Expected: f(1, 1) = 0" << std::endl << std::endl;
+                  << minimumValue << std::endl;
+        std::cout << "Expected: f(1, 1) = 0" << std::endl;
+        std::cout << "Max error: "
+                  << std::max(fabs(minimumValue), std::max(fabs(1 - minimumPoint.first), fabs(1 - minimumPoint.second)))
+                  << std::endl << std::endl;
     }
     GeneticAlgorithm<double>
         GA_S(numberOfPopulationMembers, percentOfBestOnesToLive, searchingSection, ShafferN2Function, EPS);
@@ -84,8 +95,10 @@ int main() {
         auto minimumValue = GA_S.searchMinimum(iterations);
         auto minimumPoint = GA_S.getArgumentsOfMinimumValue();
         std::cout << "Found Minimum: f(" << minimumPoint.first << ", " << minimumPoint.second << ") = "
-             << minimumValue << std::endl;
-        std::cout << "Expected: f(0, 0) = 0" << std::endl << std::endl;
+                  << minimumValue << std::endl;
+        std::cout << "Expected: f(0, 0) = 0" << std::endl;
+        std::cout << "Max error: "
+                  << std::max(fabs(minimumValue), std::max(fabs(minimumPoint.first), fabs(minimumPoint.second)))
+                  << std::endl << std::endl;
     }
 }
-

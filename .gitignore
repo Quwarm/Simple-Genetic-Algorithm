@@ -13,3 +13,6 @@
 ### Object ###
 *.o
 *.obj
+
+### Database ###
+*.db
